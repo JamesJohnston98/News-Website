@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!--Jquery UI CSS to enable successfull display of tooltip-->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+   <!--CSS styling link-->
+    <link rel="stylesheet" href="css/style.css">
+      
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!--jQuery Ui CDN -->
+      <script src="js/jquery-ui.js"></script>
+    <title>News Today</title>
+  </head>
+  <body>
+<!--Navigation-->
+<nav class="navbar my-nav navbar-expand-lg">
+   <div class = "navbar-brand newstodaylogo"><img src = "imgs/newstoday.svg" alt = "logo"></div>
+  <button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#home-news">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#MostPopular">Most Popular</a>
+      </li>
+      <li class="nav-item">
+        <a class = "nav-link" href="#tabs">World</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#tabs">Politics</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#tabs">Sport</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#tabs">Science</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#tabs">Technology</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#tabs">Entertainment</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <!--Searchbar which includes the tooltip for the user to understand how they can search for a news story which they may not be able to find.-->
+      <input class="form-control mr-sm-2 tooltip_hover" title = "Enter the name of the news story you want to find."type="search" id="news_search" placeholder="Search" aria-label="Search">
+      <button class="btn" id="searchbtn"type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+      <!--Introduction placed in jumbotron at the top of the page-->
+      <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 most_popular">News Today</h1>
+     <p class = "lead">News today keeps our readers up to date with the latest news around the world.</p>
+      <p>You can see the most popular stories as well many other stories within our application. </p>
+
+    <div class = "weather">
+     <div class = "col-sm-2 col-md-2 col-lg-2">
+   <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/armagh-17429"><img src="https://w.bookcdn.com/weather/picture/4_17429_1_1_2d343b_160_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=579&anc_id=99486"  alt="booked.net"/></a><!-- weather widget end -->
+    
+    <!--Reference for the weather widget-->
+    <!--Hotelmix.co.uk. 2020. Hotelmix.Co.Uk - Book Hotel Online. [online] Available at: <https://hotelmix.co.uk/?page=weather_widget_customize&type=4&cityID=579877&cmetric=1#> [Accessed 26 March 2020].-->
+     </div>
+</div>
+  </div>
+</div>
+<div class = "container">
+<div class = "row"> 
+ <div class = "col-sm-8 col-md-8 col-sm-8 col-lg-8">
+<!--Search Results Will be displayed-->
+<section id = "search_results">
+<div id = "results"></div>
+<div id = "searchresult"></div>   
+</section>
+     
+<section id = "cached_results">
+<div id = "cached_results"></div>
+<div id = "search_result_cached"></div>   
+</section>
+</div> 
+    </div>
+
+
+<div class = "col-sm-12 col-md-12 col-lg-12">
+<!--Main Content within the rich internet application-->
+  <!--Most Popular-->
+    <section class = "MostPopular">
+     <div class = "container">
+         <!--Most popular content will be loaded using bootstrap cards from the ajax call for the most popular-->
+         <h1 class ="most_popular">Most Popular</h1>
+         <div class ="row">
+             <div id ="MostPopular"></div>
+         </div>   
+        </div>
+         
+ </section></div>
+    
+    
+   <!--The tabs sections content is generated through the ajax calls within the jquery calling the different categories information into the application. -->
+    <!--Tabs navigation which will allow the user to move to the news stories within the page-->
+    <section class="tabs" id="tabs">
+    <h1 class ="more_news">More News</h1>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="#home-news" class="nav-link" data-toggle="tab">Home</a>
+        </li>
+         <li class="nav-item">
+            <a href="#world-news-set" class="nav-link" data-toggle="tab">World</a>
+        </li>
+          <li class="nav-item">
+            <a href="#politics-news" class="nav-link" data-toggle="tab">Politics</a>
+        </li>
+        <li class="nav-item">
+            <a href="#sport-news" class="nav-link" data-toggle="tab">Sport</a>
+        </li>
+        <li class="nav-item">
+            <a href="#science-news" class="nav-link" data-toggle="tab">Science</a>
+        </li>
+        <li class="nav-item">
+            <a href="#technology-news" class="nav-link" data-toggle="tab">Technology</a>
+        </li>
+        <li class="nav-item">
+            <a href="#entertainment-news" class="nav-link" data-toggle="tab">Entertainment</a>
+        </li>
+    </ul>
+    <!--Content which was loaded within the page.using the ajax calls within the applicaiton. -->
+    <div class="tab-content">
+        <div class="tab-pane fade show" id="home-news">
+            <h4 class="mt-2 news_title">Home</h4>
+            <p id = "home"></p>
+        </div>
+          <div class="tab-pane fade active in" id="world-news-set">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item active"><a href="#world-news"class="nav-link" data-toggle="tab">World</a>
+                    </li>
+                    <li class= "nav-item"><a href="#us-news"class="nav-link" data-toggle="tab">USA</a>
+                    </li>
+            
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active" id="world-news">
+                        <h4 class="mt-2 news_title">World</h4>
+                        <p id = "world"></p>
+                    </div>
+                    <div class="tab-pane fade" id="us-news">
+                        <h4 class="mt-2 news_title">USA</h4>
+                        <p id = "us"></p>
+                    </div>
+                </div>
+            
+        </div>
+        <div class="tab-pane fade" id="politics-news">
+            <h4 class="mt-2 news_title">Politics</h4>
+            <p id="politics"></p>
+        </div>
+        <div class="tab-pane fade" id="sport-news">
+            <h4 class="mt-2 news_title">Sport</h4>
+            <p id = "sport"></p>
+        </div>
+        <div class="tab-pane fade" id="science-news">
+            <h4 class="mt-2 news_title">Science</h4>
+            <p id="science"></p>
+        </div>
+        <div class="tab-pane fade" id="technology-news">
+            <h4 class="mt-2 news_title">Technology</h4>
+            <p id = "technology"></p>
+        </div>
+         <div class="tab-pane fade" id="entertainment-news">
+            <h4 class="mt-2 news_title">Entertainment</h4>
+            <p id = "entertainment"></p>
+        </div>
+    </div>
+    </section>
+   </div>
+      
+     <footer class="footer">
+         <p>News Today &copy; 2020</p>
+		</footer> 	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <!--jQuery CDN-->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <!--jQuery UI file used for jQuery UI tooltip-->
+  <script src = "js/jquery-ui.min.js"></script>
+        <!-- My Script-->  
+   <script src ="js/script.js"></script>
+  </body>
+</html>
